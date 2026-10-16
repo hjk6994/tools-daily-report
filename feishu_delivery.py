@@ -16,6 +16,8 @@ import requests
 ENV_KEYS=('FEISHU_APP_ID','FEISHU_APP_SECRET','FEISHU_CHAT_ID')
 OPTIONAL_KEYS=('FEISHU_WEBHOOK',)
 API='https://open.feishu.cn/open-apis'
+# 用户批准公开的应用标识；App Secret 仍只从运行环境或私密配置读取。
+DEFAULT_FEISHU_APP_ID='cli_aa46f7b6f3b9dcdc'
 
 
 class DeliveryError(RuntimeError):
@@ -31,6 +33,8 @@ def credentials(root=ROOT):
             key,value=line.split('=',1)
             if key.strip() in values and not values[key.strip()]:
                 values[key.strip()]=value.strip().strip('"').strip("'")
+    if not values['FEISHU_APP_ID']:
+        values['FEISHU_APP_ID']=DEFAULT_FEISHU_APP_ID
     return values
 
 

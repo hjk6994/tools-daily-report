@@ -43,3 +43,14 @@ AppMagic 使用固定 PK/IN/NG/ID/BD/PH/IQ/RU/SA 九国联合、Google Play、�
 .gitignore 排除认证、业务数据、输出、日志、SQLite、缓存和已安装依赖。
 保留的测试使用模拟或临时数据；本次整理没有重新执行在线日报或发送步骤。
 历史数据与同一去重账本需要单独、安全迁移，不能通过清空账本绕过重复发送保护。
+
+## 飞书应用标识
+
+默认 App ID 已按用户授权公开保存在 feishu_delivery.py，发送入口的配置加载器会直接使用。
+加载顺序为：非空环境变量、私密 .env.feishu 文件、默认 App ID。
+FEISHU_APP_SECRET 必须由批准的运行环境密钥管理机制注入，不能写入仓库；目标 FEISHU_CHAT_ID 仍须单独配置。
+仅有 App ID 不会启用发送。
+
+配置加载器离线测试（仅标准库，网络模块使用模拟对象）：
+
+    python tests/test_feishu_config.py
