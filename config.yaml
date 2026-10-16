@@ -1,0 +1,36 @@
+business_timezone: Etc/GMT-8
+report_date: today
+dsp_end_date: yesterday
+dsp_history_days: 14
+chart_days_default: 7
+chart_days_options: [7, 14]
+ps_countries: [PK, IN, NG, ID, BD, PH, CI, IQ, RU, SY, SA, CD, BF]
+comparison_series_default: 10
+comparison_series_options: [5, 6, 7, 8, 9, 10]
+ps_chart_id: '1750'
+ps_chart_ids:
+  PK: '1750'
+  IN: '736'
+  NG: '1750'
+  ID: '1750'
+  BD: '1750'
+  PH: '1750'
+  CI: '1750'
+  IQ: '1750'
+  RU: '675'
+  SY: '1750'
+  SA: '1750'
+  CD: '1750'
+  BF: '1750'
+dsp_countries: null
+top_n: 5
+observation_n: 3
+gp_provider: appbrain_free
+gp_watchlist_max_apps: 12
+gp_monthly_credit_cap: 450
+dsp_scope_status: unknown
+dsp_revenue_type: unknown
+dsp_download_field: resp
+dsp_revenue_field: total_revenue
+dsp_revenue_divisor: 1000
+dsp_currency: USD
